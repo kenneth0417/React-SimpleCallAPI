@@ -1,0 +1,63 @@
+* {
+  background-color: peachpuff;
+  font-family: Newsreader, arial;
+}
+
+.title-section {
+  text-align: center;
+
+  h1 {
+    font-family: Georgia;
+    font-size: 45px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+}
+
+.search-section {
+  text-align: center;
+
+  input {
+    width: 250px;
+    padding: 10px;
+    margin: 20px;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+
+  input::placeholder {
+    color: gray;
+  }
+
+  button {
+    width: 75px;
+    padding: 7.5px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid black;
+  }
+}
+
+.article-section {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 60%;
+}
+
+.article-content {
+  margin: 30px;
+
+  h3 {
+    font-size: 24px;
+  }
+
+  span {
+    color: blue;
+    text-decoration: underline;
+  }
+}

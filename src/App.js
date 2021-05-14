@@ -1,23 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState, useEffect } from "react";
+import Articles from "./Components/Articles";
+import Title from "./Components/Title";
+import Search from "./Components/Search";
 
 function App() {
+  const [search, setSearch] = useState("");
+
+  const [articles, setArticles] = useState([]);
+
+  const [query, setQuery] = useState("election");
+
+  const API_KEY = "HAIAdLNahXQi4AR5ujy96U5GADy4xOiN";
+
+  const getArticle = async () => {
+    const res = await fetch(
+      `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&api-key=${API_KEY}`
+    );
+    const data = await res.json();
+    setArticles(data.response.docs);
+  };
+
+  useEffect(() => {
+    getArticle();
+    // eslint-disable-next-line
+  }, [query]);
+
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const clickSubmit = (e) => {
+    setQuery(search);
+    setSearch("");
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Title />
+      <Search
+        search={search}
+        handleSearch={handleSearch}
+        clickSubmit={clickSubmit}
+      />
+      <Articles articles={articles} />
     </div>
   );
 }
