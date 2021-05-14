@@ -11,7 +11,7 @@ function App() {
 
   const [query, setQuery] = useState("election");
 
-  const API_KEY = "HAIAdLNahXQi4AR5ujy96U5GADy4xOiN";
+  const API_KEY = "sample_key";
 
   const getArticle = async () => {
     const res = await fetch(
