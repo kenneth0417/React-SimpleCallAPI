@@ -1,1 +1,1 @@
-
+This project covers the simple async, await function which used to call an API, together with the React useState and useEffect. In order to replicate this code, you must create your own account in their website to generate an API key.
