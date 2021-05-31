@@ -1,1 +1,1 @@
-This project is a static web page where you can search for articles with the use of an API of the New York Times. This project covers the simple async, await function which used to call an API, together with the React useState and useEffect. In order to replicate this code, you must create your own account in their website to generate an API key. Technologies used are ReactJS, SCSS and HTML.
+
